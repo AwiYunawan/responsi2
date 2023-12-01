@@ -1,0 +1,111 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Data Diary Awi</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToLoginPage()">
+        <ion-icon name="log-out"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let item of dataDiary">
+    <ion-item>
+      <ion-label>
+        <h2>{{ item.judul }}</h2>
+        <p>{{ item.isi_diary }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="danger" (click)="hapusDiary(item.id)">
+          <ion-icon name="trash"></ion-icon>
+          Hapus
+        </ion-button>
+        <ion-button (click)="open_modal_edit(true, item.id)">
+          <ion-icon name="create"></ion-icon>
+          Edit
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-button (click)="open_modal_tambah(true)" expand="full" fill="solid">
+      <ion-icon name="add-circle"></ion-icon>
+      Tambah Diary
+    </ion-button>
+  </ion-card>
+
+  <!-- Modal Tambah Diary -->
+  <ion-modal [isOpen]="modal_tambah">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">
+              <ion-icon name="arrow-back"></ion-icon>
+              Batal
+            </ion-button>
+          </ion-buttons>
+          <ion-title>Tambah Diary</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="floating">Judul</ion-label>
+          <ion-input [(ngModel)]="judul" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Isi Diary</ion-label>
+          <ion-input [(ngModel)]="isi_diary" type="text"></ion-input>
+        </ion-item>
+        <ion-row class="ion-margin-top">
+          <ion-col>
+            <ion-button (click)="tambahDiary()" color="primary" expand="full">
+              Tambah Diary
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Modal Edit Diary -->
+  <ion-modal [isOpen]="modal_edit">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">
+              <ion-icon name="arrow-back"></ion-icon>
+              Batal
+            </ion-button>
+          </ion-buttons>
+          <ion-title>Edit Diary</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="floating">Judul</ion-label>
+          <ion-input [(ngModel)]="judul" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Isi Diary</ion-label>
+          <ion-input [(ngModel)]="isi_diary" type="text"></ion-input>
+        </ion-item>
+        <ion-input [(ngModel)]="id" type="hidden"></ion-input>
+        <ion-row class="ion-margin-top">
+          <ion-col>
+            <ion-button (click)="editDiary()" color="primary" expand="full">
+              Edit Diary
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

@@ -1,0 +1,37 @@
+ion-header {
+    ion-toolbar {
+      --background: #3880ff; /* Warna header */
+      --color: #fff; /* Warna teks pada header */
+    }
+  }
+  
+  ion-content {
+    --ion-background-color: #0b0b0b; /* Warna latar belakang konten */
+  }
+  
+  ion-button {
+    --ion-text-color: #fff; /* Warna teks pada tombol */
+    --background: #4caf50; /* Warna tombol */
+    --border-radius: 8px; /* Sudut bulat tombol */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+    --transition: background-color 0.3s ease; /* Transisi warna latar belakang tombol */
+  }
+  
+  ion-button:hover {
+    --background: #4583a0; /* Warna tombol saat dihover */
+  }
+  
+  ion-item {
+    --ion-background-color: #fff; /* Warna latar belakang item */
+    --ion-border-color: #ccc; /* Warna border item */
+    --ion-border-radius: 8px; /* Sudut bulat item */
+  }
+  
+  ion-button, ion-icon {
+    --transition: transform 0.3s ease; /* Transisi transformasi (misalnya, scale) */
+  }
+  
+  ion-button:hover, ion-icon:hover {
+    --transform: scale(1.1); /* Perbesar elemen saat dihover */
+  }
+  
