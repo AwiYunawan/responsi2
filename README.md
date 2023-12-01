@@ -7,4 +7,4 @@ Aplikasi ini berfungsi sebagai platform diari digital dengan fungsi CRUD. Penggu
 ![Tampilan List Data Diary](list.jpg)
 ![Tambah Data](tambah.jpg)
 ![Edit Data](edit.jpg)
-![Tampilan List Setelah Delete Data](Delete.jpg)
+![Tampilan List Setelah Delete Data](delete.jpg)
